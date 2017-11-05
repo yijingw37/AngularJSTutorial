@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    </head>
+
+    <body ng-app="myapp">
+
+        <!--ng-controller tells AngularJS which controller to use with this view-->
+        <div ng-controller="HelloController">
+            <h2>Welcome {{helloTo.title}} to the world of Tutorialspoint!</h2>
+            <p>Enter your Name: <input type="text" ng-model="helloTo.title"></p>
+        </div>
+
+        <script>
+            //below registers controller function HelloController with angular module myapp.
+             angular.module("myapp", [])
+                    .controller("HelloController", function ($scope) {
+                        //$scope is model
+                        $scope.helloTo = {};
+                        $scope.helloTo.title = "AngularJS";
+                     });
+        </script>
+
+    </body>
+</html>
